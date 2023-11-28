@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Garden</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #flower-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        #flower-image {
+            max-width: 100%;
+            max-height: 100%;
+            border: 2px solid #555;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #change-flower-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="flower-container">
+    <img id="flower-image" src="WhatsApp Image 2023-11-28 at 00.21.15_784bb13d.jpg" alt="Flower">
+</div>
+
+<button id="change-flower-btn" onclick="changePhoto()">Change Photo</button>
+
+<script>
+    const flowerImages = ["WhatsApp Image 2023-11-28 at 00.17.15_34fdbaa6.jpg", "IMG-20231023-WA0015.jpg", "IMG-20230809-WA0004.jpg","WhatsApp Image 2023-11-28 at 00.17.06_e5818cf8.jpg","flower5.jpeg"];
+
+    let currentImageIndex = 0;
+
+    function changePhoto() {
+        currentImageIndex = (currentImageIndex + 1) % flowerImages.length;
+        document.getElementById("flower-image").src = flowerImages[currentImageIndex];
+    }
+</script>
+
+</body>
+</html>
+
+
